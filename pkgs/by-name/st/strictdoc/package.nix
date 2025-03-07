@@ -6,14 +6,14 @@
 
 python3.pkgs.buildPythonApplication rec {
   pname = "strictdoc";
-  version = "0.0.58";
+  version = "0.7.0";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "strictdoc-project";
     repo = "strictdoc";
     tag = version;
-    hash = "sha256-0X74Lv25pUdOUgQzqQU6p+fjuxhC/JqfKEFI7c5t67U=";
+    hash = "sha256-xq8mgsKLRAwW5fdEozH5Mtn/B5yNcVyTtG+Oe7UaxCA=";
   };
 
   nativeBuildInputs = [
@@ -25,11 +25,16 @@ python3.pkgs.buildPythonApplication rec {
     docutils
     fastapi
     graphviz
+    html2print
     html5lib
     jinja2
     lxml
+    openpyxl
     pybtex
     pygments
+    python3.pkgs.tree-sitter
+    tree-sitter-python
+    tree-sitter-cpp
     datauri
     python-multipart
     selenium
